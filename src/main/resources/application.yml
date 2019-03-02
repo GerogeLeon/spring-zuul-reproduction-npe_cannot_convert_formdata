@@ -1,0 +1,9 @@
+zuul:
+  routes:
+    my-route:
+      path: /reproduce/**
+      url: https://httpbin.org/
+
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 10000
