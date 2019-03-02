@@ -16,11 +16,11 @@ import java.io.File;
 public class NpeCannotConvertFormdataApplicationTests {
 
     /**
-     * when there is a same key in query params as in multipart, the NPE occurs
+     * when there is a null-value key in query params as in multipart, the NPE occurs
      */
     @Test
     public void reproduceProblem() throws UnirestException {
-        String url = "http://localhost:8080/reproduce/post?username";//exception, because the key 'username' is the same as in multipart
+        String url = "http://localhost:8080/reproduce/post?username";//exception, because the key null-value 'username' is the same as in multipart
 //        String url = "http://localhost:8080/reproduce/post";//normal
         Unirest.setTimeouts(0, 0);
         HttpResponse<String> response = Unirest.post(url)
